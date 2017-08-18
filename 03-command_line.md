@@ -57,7 +57,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+`ls -m` displays names as a comma separated list  
+`ls -d` displays only directories  
+`ls -c` displays files by file timestamp  
+`ls -F` flags filenames  
+`ls -r` displays files in reverse order  
 
 ---
 
@@ -65,7 +69,7 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+`xargs` is used to remove or perform an operation on a list of one or more comma/space separated results produced by a `grep` or `find` command, for example. The following is an example: `find . -name '*.py' | xargs grep 'word'` where all .py files are located in the current directory and the files with 'word' are displayed.  
 
  
 
