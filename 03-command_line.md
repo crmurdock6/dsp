@@ -48,7 +48,8 @@ What do the following commands do:
 `ls -l`long lists files and directories as a table and includes access rights, number of hard links, username of file's owner, group that owns the file, size of the file in bytes, last modified date, and the name of the file  
 `ls -lh` long lists with human readable file sizes  
 `ls -lah`long lists with human readable file sizes and hidden files included  
-`ls -t`  
+`ls -t` orders contents based on their last modified date  
+`ls -Glp` makes a long list but does not print group names and appends '/' to directories  
 
 ---
 
