@@ -81,7 +81,7 @@ Upload these 3 files to the [`editors`](editors/) folder.
 
 What terminal editor will be your preferred choice of use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I will use vim as my terminal editor. I have used nano in the past but feel that vim will be more useful as my skills grow.
 
 --
 
@@ -89,6 +89,6 @@ What terminal editor will be your preferred choice of use? How did you make your
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I will be using atom as my graphical editor as this is the editor I have used in the past. Atom is open source, has a built-in package manager, and the ability to open a single file or a whole project. The theme of atom can be changed and the UI can be tweaked, making it very easy to customize. Example shortcuts include `cmd-f` to find and replace and `cmd-l` to select a line.
 
  
