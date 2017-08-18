@@ -19,16 +19,16 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-`pwd` - show current working directory path
-`mkdir` - creating a directory
-`rm -r dir` deletes a directory and its files
-`touch file.txt` creates a file with the `touch` command
-`rm file.txt` deletes a file
-`mv file.txt new_file.txt` renaming a file
-`ls -a` lists all files, including hidden files
-`cp ~/path/file.txt ~/new_path` copies a file from one directory to another
-`cd ~` returns to the home directory
-`sort file.txt` and `uniq file.txt` can be used to sort entries in a file and filter out duplicate entries.
+`pwd` - show current working directory path  
+`mkdir` - creating a directory  
+`rm -r dir` deletes a directory and its files  
+`touch file.txt` creates a file with the `touch` command  
+`rm file.txt` deletes a file  
+`mv file.txt new_file.txt` renaming a file  
+`ls -a` lists all files, including hidden files  
+`cp ~/path/file.txt ~/new_path` copies a file from one directory to another  
+`cd ~` returns to the home directory  
+`sort file.txt` and `uniq file.txt` can be used to sort entries in a file and filter out duplicate entries  
 
 ---
 
@@ -43,7 +43,12 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+`ls` lists the contents of a directory  
+`ls -a` lists all contents, even hidden files  
+`ls -l`long lists files and directories as a table and includes access rights, number of hard links, username of file's owner, group that owns the file, size of the file in bytes, last modified date, and the name of the file  
+`ls -lh` long lists with human readable file sizes  
+`ls -lah`long lists with human readable file sizes and hidden files included  
+`ls -t`  
 
 ---
 
