@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Lists and tuples are similar in that they are sequences of values that can be any type. Only tuples can work as keys in dictionaries as they are immutable while lists are mutable and can lead to unexpected behavior.
 
 ---
 
@@ -20,7 +20,7 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Lists and sets are both sequences of values with some key differences being that sets are unordered, can't contain duplicates, and can only contain hashable items. An example of a list is `a = ['string', ['list', 'within', 'list'], 1]` showing that any type can be used as a value. An example of a set is `b = {5, 'string', ('tuple', 'of', 'strings')}`
 
 ---
 
@@ -28,7 +28,21 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Python's `lambda` operator is used to create small, anonymous functions. They are throw-away functions and are therefore only needed where they are created.Lambda functions are often used in combindation with `filter()`, `map()`, and `reduce()`. Two examples are as follows:
+
+```
+square = lambda x: x ** 2
+# square(2) will return 2 ** 2
+
+vehicle_tuples = [
+	('pontiac', 'firebird', 'red', 2002),
+	('toyota', 'camry', 'blue', 2014),
+	('ford', 'fiesta', 'white', 2008)
+]
+
+# sort by year
+print(sorted(vehicle_tuples, key=lambda vehicle: vehicle[3]))
+``` 
 
 ---
 
@@ -36,7 +50,24 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions provide a concise way to make lists and include brackets containing an expression followed by a `for` clause and zero or more `if` or `for` clauses. A common application for list comprehensions is to make a new list where an operation is applies to each element. An example with the corresponding `map` and `filter` equivalents is shown below:
+
+```
+names = ['bob', 'kevin', 'mary', 'brian']
+b_names = [x for x in names if x.startswith('b')]
+b_names = list(map(lambda x: x.startswith('b'), names))
+b_names = list(filter(lambda x: x.startswith('b'), names))
+```
+
+Examples of set demonstrations and dictionary comprehensions are below:
+
+```
+# set comprehension
+even_numbers = {x for x in range(1, 10) if x % 2 == 0}
+
+# dictionary comprehension
+squares = {x: x ** 2 for x in range(10)} 
+```
 
 ---
 
