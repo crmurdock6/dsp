@@ -19,9 +19,10 @@ def donuts(count):
     'Number of donuts: many'
     """
     if count >= 10:
-	return 'Number of donuts: many'
+        return 'Number of donuts: many'
     else:
-	return 'Number of donuts: {}'.format(count)
+        return 'Number of donuts: {}'.format(count)
+
 
 def both_ends(s):
     """
@@ -40,9 +41,10 @@ def both_ends(s):
     'xyyz'
     """
     if len(s) < 2:
-	return ''
+        return ''
     else:
-	return s[:2] + s[-2:]
+        return s[:2] + s[-2:]
+
 
 def fix_start(s):
     """
@@ -63,6 +65,7 @@ def fix_start(s):
     first_letter = s[0]
     return first_letter + s[1:].replace(first_letter, '*')
 
+
 def mix_up(a, b):
     """
     Given strings a and b, return a single string with a and b
@@ -80,6 +83,7 @@ def mix_up(a, b):
     """
     return b[:2] + a[2:] + ' ' + a[:2] + b[2:]
 
+
 def verbing(s):
     """
     Given a string, if its length is at least 3, add 'ing' to its end.
@@ -95,11 +99,12 @@ def verbing(s):
     'do'
     """
     if len(s) < 3:
-	return s
+        return s
     elif s.endswith('ing'):
-	return s + 'ly'
+        return s + 'ly'
     else:
-	return s + 'ing'
+        return s + 'ing'
+
 
 def not_bad(s):
     """
@@ -119,13 +124,14 @@ def not_bad(s):
     "It's bad yet not"
     """
     if ('not' in s) and ('bad' in s):
-	_bad = s.find('bad')
-	_not = s.find('not')
-	if _bad > _not:
-	    words_to_replace = s[_not:_bad + 3]
-	    return s.replace(words_to_replace, 'good')
+        _bad = s.find('bad')
+        _not = s.find('not')
+        if _bad > _not:
+            words_to_replace = s[_not:_bad + 3]
+            return s.replace(words_to_replace, 'good')
     else:
-	return s
+        return s
+
 
 def front_back(a, b):
     """
@@ -163,5 +169,5 @@ def front_back(a, b):
         back_a = a[len(a)//2 + 1:]
         front_b = b[:len(b)//2 + 1]
         back_b = b[len(b)//2 + 1:]
-    
+
     return front_a + front_b + back_a + back_b
