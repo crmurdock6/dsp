@@ -69,8 +69,52 @@ Cohen's D is an example of effect size.  Other examples of effect size are:  cor
 
 You will see effect size again and again in results of algorithms that are run in data science.  For instance, in the bootcamp, when you run a regression analysis, you will recognize the t-statistic as an example of effect size.
 
+```
+preg = nsfg.ReadFemPreg()  # read file
+live = preg[preg.outcome == 1]  # filter for live births
+first = live[live.birthord == 1]  # select first children
+others = live[live.birthord != 1]  # select children who were not first
+CohenEffectSize(first.totalwgt_lb, others.totalwgt_lb)
+```
+The result is -0.0887 which is considered a very small effect size and is negative, revealing that weights of first borns are slightly lower. The function CohenEffectSize takes two groups as an input and calculates the difference in means divided by the pooled standard deviation.
+
 ### Q2. [Think Stats Chapter 3 Exercise 1](statistics/3-1-actual_biased.md) (actual vs. biased)
 This problem presents a robust example of actual vs biased data.  As a data scientist, it will be important to examine not only the data that is available, but also the data that may be missing but highly relevant.  You will see how the absence of this relevant data will bias a dataset, its distribution, and ultimately, its statistical interpretation.
+
+```
+def BiasPmf(pmf, label):
+    new_pmf = pmf.Copy(label=label)
+    for x, p in pmf.Items():
+	 new_pmf.Mult(x, x)
+    new_pmf.Normalize()
+    return new_pmf
+
+resp = nsfg.ReadFemResp()  # read file
+hist = thinkstats2.Hist(resp.numkdhh, label='numkdhh') 
+thinkplot.Hist(hist) # create histogram
+thinkplot.Config(xlabel='Children in Household', ylabel='Count')
+```
+![histogram](/img/statsch3A.png)
+```
+ def BiasPmf(pmf, label):
+    new_pmf = pmf.Copy(label=label)
+    for x, p in pmf.Items():
+    	new_pmf.Mult(x, x)
+    new_pmf.Normalize()
+    return new_pmf
+
+pmf = thinkstats2.Pmf(resp.numkdhh, label='actual')
+biased_pmf = BiasPmf(pmf, label='biased')
+thinkplot.PrePlot(2)
+thinkplot.Pmfs([pmf, biased_pmf])
+thinkplot.Config(xlabel='# children in household', ylabel='PMF')
+```
+![pmf](/img/statsch3B.png)
+```
+print('Actual mean', pmf.Mean())
+print('Biased mean', biased_pmf.Mean())
+```
+The actual mean is ~1.02 while the biased mean is ~2.40. BiasPmf function takes each class size and multiplies the probability by the number of studentsfor that class size.
 
 ### Q3. [Think Stats Chapter 4 Exercise 2](statistics/4-2-random_dist.md) (random distribution)  
 This questions asks you to examine the function that produces random numbers.  Is it really random?  A good way to test that is to examine the pmf and cdf of the list of random numbers and visualize the distribution.  If you're not sure what pmf is, read more about it in Chapter 3.  
